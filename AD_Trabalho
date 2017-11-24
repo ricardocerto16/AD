@@ -1,0 +1,43 @@
+TÓPICOS DO RELATÓRIO:
+-> Falar das entidades que escolhemos
+-> Falar dos relacionamentos entre elas
+-> Falar dos atributos(?)
+-> Decisões que tomamos a elaborar o Modelo Lógico
+(EX. pq criamos diferentes tabelas, e cenas assim)
+-> Normalização(?)
+-> Povoamento que vamos utilizar
+-> Import para o talend
+-> Como fazer as tabelas de DW
+-> Decidir o porque de usarmos aquele DW
+-> Dividir o povoamento , tipo meter o dataset todo e depois 
+usar uma data linha importada do dataset
+-> Falar da perguntas que escolhemos no Power Bi 
+-> Decidir as perguntas que temos de fazer no Power BI
+->
+
+--------------------------------------------------------
+SITES:
+-> https://archive.ics.uci.edu/ml/datasets/Flags
+-> https://archive.ics.uci.edu/ml/machine-learning-databases/flags/flag.data
+-> https://archive.ics.uci.edu/ml/machine-learning-databases/flags/flag.names
+
+
+---------------------------------------------------------
+- enviar tudo o que tenhamos feito
+
+
+-> power bi:
+- tirar prints aos dashboards
+
+
+-> Relatório : 
+- Não colocar código
+- Legenda antes da tabela
+- legenda depois da imagem
+- justificar os passos todos
+
+----------------------------------------------------------
+
+DESAFIO:
+-> Ketle tipo igual ao Talend
+fazer o que fazemos no talend no ketle
