@@ -14,6 +14,7 @@ SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='TRADITIONAL,ALLOW_INVALID_DATES';
 CREATE SCHEMA IF NOT EXISTS `mydb` DEFAULT CHARACTER SET utf8 ;
 USE `mydb` ;
 
+#DROP SCHEMA mydb;
 -- -----------------------------------------------------
 -- Table `mydb`.`Landmass`
 -- -----------------------------------------------------
@@ -123,7 +124,7 @@ CREATE TABLE IF NOT EXISTS `mydb`.`Country` (
   `landmass` INT NOT NULL,
   `zone` INT NOT NULL,
   `area` INT NOT NULL,
-  `population` VARCHAR(45) NOT NULL,
+  `population` INT NOT NULL,
   `language` INT NOT NULL,
   `religion` INT NOT NULL,
   `flag` INT NOT NULL,
