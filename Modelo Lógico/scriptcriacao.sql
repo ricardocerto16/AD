@@ -7,14 +7,13 @@ SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='TRADITIONAL,ALLOW_INVALID_DATES';
 -- -----------------------------------------------------
 -- Schema mydb
 -- -----------------------------------------------------
-
+#DROP SCHEMA mydb;
 -- -----------------------------------------------------
 -- Schema mydb
 -- -----------------------------------------------------
 CREATE SCHEMA IF NOT EXISTS `mydb` DEFAULT CHARACTER SET utf8 ;
 USE `mydb` ;
 
-#DROP SCHEMA mydb;
 -- -----------------------------------------------------
 -- Table `mydb`.`Landmass`
 -- -----------------------------------------------------
@@ -40,7 +39,7 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `mydb`.`Language` (
   `idLanguage` INT NOT NULL,
-  `language` VARCHAR(45) NOT NULL,
+  `language_name` VARCHAR(45) NOT NULL,
   PRIMARY KEY (`idLanguage`))
 ENGINE = InnoDB;
 
@@ -120,18 +119,18 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `mydb`.`Country` (
   `idCountry` INT NOT NULL,
-  `name` VARCHAR(60) NOT NULL,
+  `name_country` VARCHAR(60) NOT NULL,
   `landmass` INT NOT NULL,
   `zone` INT NOT NULL,
   `area` INT NOT NULL,
-  `population` INT NOT NULL,
-  `language` INT NOT NULL,
+  `population` VARCHAR(45) NOT NULL,
+  `language_country` INT NOT NULL,
   `religion` INT NOT NULL,
   `flag` INT NOT NULL,
   PRIMARY KEY (`idCountry`),
   INDEX `fk_Country_Landmass_idx` (`landmass` ASC),
   INDEX `fk_Country_Zone1_idx` (`zone` ASC),
-  INDEX `fk_Country_Language1_idx` (`language` ASC),
+  INDEX `fk_Country_Language1_idx` (`language_country` ASC),
   INDEX `fk_Country_Religion1_idx` (`religion` ASC),
   INDEX `fk_Country_Flag1_idx` (`flag` ASC),
   CONSTRAINT `fk_Country_Landmass`
@@ -145,7 +144,7 @@ CREATE TABLE IF NOT EXISTS `mydb`.`Country` (
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
   CONSTRAINT `fk_Country_Language1`
-    FOREIGN KEY (`language`)
+    FOREIGN KEY (`language_country`)
     REFERENCES `mydb`.`Language` (`idLanguage`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
