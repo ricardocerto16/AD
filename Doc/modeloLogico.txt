@@ -1,2 +1,19 @@
+=> Uso da relação das PK/FK para evitar erros.
+=> Criação de novas tabelas de forma a evitar repetir dados
+=> O porque da relação Country - Flag ser 1:1?
+Para garantir que cada país tem a sua própria bandeira, excluindo
+assim a hipótese de 2 países terem a mesma bandeira.
+=> (Tabela Flag) decidimos meter as cores todas como atributos da tabela
+porque se criassemos uma tabela com todas as permutações de cores 
+iriamos ter 7! inscrições na tabela. E como esses atributos são binários,
+podemos concluir de uma forma mais eficaz se uma bandeira tem uma dada cor.
+=> Explicar o porque de todos os atributos serem não nulos.
 => O porque de transformar os dados presentes no dataset em várias 
 tabelas no MySQL Workbench ?
+=> Passamos o mainhue(cor predominante), o top_leftcolor, o top_botright
+para um ID de forma a evitarmos redundância e assim criamos uma nova tabela
+Cor , que possui um ID de Cor , e o seu respetivo nome.
+=> O porque de separar a Flag do Country? 
+Pelo facto de simplificar o acesso ás tabelas , pois se quisermos informações
+sobre um dado país vamos á tabela Country e se quisermos obter informação sobre
+a sua bandeira vamos á tabela Flag.
