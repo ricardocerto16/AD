@@ -1,0 +1,57 @@
+Criação do DATA WAREHOUSE:
+
+-> 7 etapas de construção do DW:
+
+    1)Levantamento das necessidades: devemos antes de tudo 
+fazer o levantamento de todas as informações desejadas pelo 
+usuário. Nesse primeiro momento fazemos o cruzamento de 
+Dimensões e Fatos necessários para alcançar os anseios dos 
+gestores. Nesse primeiro momento trabalhamos em O QUÊ o DW 
+terá, e não O COMO, por isso não devemos nos preocupar com a 
+existência efetiva dos dados e sim com os desejos requisitados.
+    2)Mapeamento dos dados: nessa etapa fazemos o mapeamento 
+dos dados, identificando a fonte e como chegar até eles. Aqui 
+vemos a viabilidade dos desejos elencados na primeira etapa, 
+verificando a existência ou não dos dados para o alcance das 
+necessidades solicitadas.
+    3)Construção da Staging Area: após o mapeamento, 
+construímos a estrutura chamada Staging Area, que se trata da 
+área de transição dos dados do DW. Nessa área os dados são 
+copiados e desacoplados dos sistemas de operação (OLTP) e 
+recebem o devido tratamento para as futuras cargas nas tabelas 
+de Fatos e Dimensões.
+    4)Construção das Dimensões: construímos nessa etapa a 
+estrutura das Dimensões que farão parte do DW. Definimos também a historicidade que os dados irão possuir nas Dimensões.
+    5)Construção ds(s) Fato(s): construímos nessa etapa (após a 
+construção das Dimensões) a(s) estrutura(s) da(s) Fato(s). 
+Aqui é avaliado e definido a granularidade da informação 
+que será armazenada em cada Fato. Avaliamos também a 
+expectativa de crescimento e de armazenamento que serão 
+utilizados.
+    6)Definição do processo geral de carga: após concluirmos as 
+etapas anteriores, precisamos criar o motor para que tudo 
+seja carregado, atualizado, orquestrado e processado de 
+forma automática e ordenada. Por isso, a necessidade do 
+processo geral de carga que é o “cérebro” do DW.
+    7)Criação dos metadados: por fim, precisamos
+desenvolver toda a documentação dos metadados, que incluem o processo de construção e o dicionário de dados. Os metadados 
+fornecem apoio importante para a gestão do conhecimento.
+
+
+-> Áreas de Armazenamento de um DW:
+Dados integrados e organizados por assunto
+Histórico de informações da empresa
+Esquema estrela (fatos e dimensões)
+Não-Volátil
+Metadados
+Grande volume de dados
+
+-> falar sobre : Sistema transacional vs data warehouse
+Fig.1 deste site: https://www.devmedia.com.br/transformacao-de-bases-de-dados-transacionais-em-data-warehouse/34422
+
+https://rafaelpiton.com.br/data-warehouse-como-modelar/
+
+https://www.devmedia.com.br/qualidade-na-modelagem-dos-dados-de-um-data-warehouse/6978
+
+-> Vantagens e desvantagens:
+https://pt.stackoverflow.com/questions/54007/o-que-%C3%A9-data-warehouse-e-quais-suas-vantagens-e-desvantagens
