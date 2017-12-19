@@ -1,0 +1,1 @@
+na passagem dos dados da tabela flag para a correspondente (dim_flag) no DW, o idDim_flag pode ser o mesmo que o idFlag porque a tabela dim_flag ée resultado direto da tabela flag (não resulta de nenhuma junção de tabelas) 
