@@ -7,7 +7,7 @@ SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='TRADITIONAL,ALLOW_INVALID_DATES';
 -- -----------------------------------------------------
 -- Schema mydb
 -- -----------------------------------------------------
-#DROP SCHEMA mydb;
+
 -- -----------------------------------------------------
 -- Schema mydb
 -- -----------------------------------------------------
@@ -119,11 +119,11 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `mydb`.`Country` (
   `idCountry` INT NOT NULL,
-  `name_country` VARCHAR(60) NOT NULL,
+  `name` VARCHAR(60) NOT NULL,
   `landmass` INT NOT NULL,
   `zone` INT NOT NULL,
   `area` INT NOT NULL,
-  `population` VARCHAR(45) NOT NULL,
+  `population` INT NOT NULL,
   `language_country` INT NOT NULL,
   `religion` INT NOT NULL,
   `flag` INT NOT NULL,
