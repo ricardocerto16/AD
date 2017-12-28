@@ -64,6 +64,18 @@ ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
+-- Table `flagsdw`.`dim_Country`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `flagsdw`.`dim_Country` (
+  `idDim_Country` INT NOT NULL,
+  `name` VARCHAR(90) NOT NULL,
+  `area` INT NOT NULL,
+  `population` INT NOT NULL,
+  PRIMARY KEY (`idDim_Country`))
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
 -- Table `flagsdw`.`Paises_Info`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `flagsdw`.`Paises_Info` (
@@ -72,14 +84,13 @@ CREATE TABLE IF NOT EXISTS `flagsdw`.`Paises_Info` (
   `idDim_Religion` INT NOT NULL,
   `idDim_Flag` INT NOT NULL,
   `idDim_Language` INT NOT NULL,
-  `name` VARCHAR(90) NOT NULL,
-  `area` INT NULL,
-  `population` INT NULL,
+  `idDim_Country` INT NOT NULL,
   PRIMARY KEY (`idPaises_Info`),
   INDEX `fk_Paises_Info_dim_Zone_idx` (`idDim_Zone` ASC),
   INDEX `fk_Paises_Info_dim_Religion_Language1_idx` (`idDim_Religion` ASC),
   INDEX `fk_Paises_Info_dim_Flag1_idx` (`idDim_Flag` ASC),
   INDEX `fk_Paises_Info_dim_Language1_idx` (`idDim_Language` ASC),
+  INDEX `fk_Paises_Info_dim_Country1_idx` (`idDim_Country` ASC),
   CONSTRAINT `fk_Paises_Info_dim_Zone`
     FOREIGN KEY (`idDim_Zone`)
     REFERENCES `flagsdw`.`dim_Landmass` (`idDim_Zone`)
@@ -99,6 +110,11 @@ CREATE TABLE IF NOT EXISTS `flagsdw`.`Paises_Info` (
     FOREIGN KEY (`idDim_Language`)
     REFERENCES `flagsdw`.`dim_Language` (`idDim_Language`)
     ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_Paises_Info_dim_Country1`
+    FOREIGN KEY (`idDim_Country`)
+    REFERENCES `flagsdw`.`dim_Country` (`idDim_Country`)
+    ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
@@ -106,4 +122,3 @@ ENGINE = InnoDB;
 SET SQL_MODE=@OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
-paises_info
