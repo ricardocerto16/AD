@@ -1,5 +1,0 @@
->>>> Meter a "zone" como atributos da tabela País
-
->>>> Separar a tabela Religion_Language em duas diferentes
-                          ou
->>>> Ou language ou Religion (1 delas) passar a ser atributo na tabela país
